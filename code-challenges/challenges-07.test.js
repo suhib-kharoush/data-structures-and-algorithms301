@@ -54,6 +54,23 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
     // Solution code here...
+    let idxNum = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0) {
+            let result = 1;
+            for (let j = 0; j < arr[i]; j++) {
+                result = result * 2;
+            }
+            idxNum.push(result);
+        } else {
+            let result = 1;
+            for (let j = 0; j < arr[i] * -1; j++) {
+                result = result * .5;
+            }
+            idxNum.push(result);
+        }
+    }
+    return idxNum;
 
 };
 
@@ -65,6 +82,23 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
     // Solution code here...
+    let nums = [];
+    arr.forEach(Element => {
+        if (Element > 0) {
+            let result = 1;
+            for (let i = 0; i < Element; i++) {
+                result = result * 2;
+            }
+            nums.push(result);
+        } else {
+            let result = 1;
+            for (let i = 0; i < Element * -1; i++) {
+                result = result * .5;
+            }
+            nums.push(result)
+        }
+    })
+    return nums;
 
 };
 
